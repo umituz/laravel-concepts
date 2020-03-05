@@ -3,6 +3,7 @@
 namespace App\View\Components;
 
 use Illuminate\View\Component;
+use Illuminate\View\View;
 
 /**
  * Class Sidebar
@@ -26,7 +27,7 @@ class Sidebar extends Component
      * @param $title
      * @param $info
      */
-    public function __construct($title,$info)
+    public function __construct($title, $info)
     {
         $this->title = $title;
         $this->info = $info;
@@ -35,10 +36,21 @@ class Sidebar extends Component
     /**
      * Get the view / contents that represent the component.
      *
-     * @return \Illuminate\View\View|string
+     * @return View|string
      */
     public function render()
     {
         return view('components.sidebar');
+    }
+
+    public function items($string)
+    {
+        return [
+            'hi',
+            'hello',
+            'aloha',
+            'hey',
+            $string
+        ];
     }
 }
