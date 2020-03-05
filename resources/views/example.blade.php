@@ -11,6 +11,10 @@
             background-color: red;
         }
 
+        .blueColor {
+            background-color: blue;
+        }
+
         .bigText {
             font-size: 20px;
         }
@@ -23,5 +27,8 @@
     Additional text
 </x-sidebar>
 
+<x-navigation/>
+
+<x-partials.subview/>
 </body>
 </html>
