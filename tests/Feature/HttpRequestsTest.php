@@ -44,4 +44,9 @@ class HttpRequestsTest extends TestCase
         });
 
     }
+
+    public function testJust()
+    {
+        $this->assertTrue(true);
+    }
 }
