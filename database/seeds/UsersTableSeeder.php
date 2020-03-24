@@ -17,5 +17,13 @@ class UsersTableSeeder extends Seeder
             'email' => 'umituz998@gmail.com',
             'password' => bcrypt(123456)
         ]);
+
+        factory(User::class, 5)->create()->each(function ($user) {
+
+            $user->image()->create([
+                'url' => 'images/users/user-' . $user->id . '.jpg'
+            ]);
+
+        });
     }
 }
