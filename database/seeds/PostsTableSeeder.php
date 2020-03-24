@@ -13,7 +13,7 @@ class PostsTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Post::class, 15)->create()->each(function ($post) {
+        factory(Post::class, 1)->create()->each(function ($post) {
 
             $post->image()->create([
                 'url' => 'images/posts/post-' . $post->id . '.png'

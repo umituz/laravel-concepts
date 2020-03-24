@@ -5,22 +5,30 @@ namespace App;
 use App\Filters\Active;
 use App\Filters\MaxCount;
 use App\Filters\Sort;
+use Astrotomic\Translatable\Translatable;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Pipeline\Pipeline;
+use Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
 
 /**
  * Class Post
  * @package App
  */
-class Post extends Model
+class Post extends Model implements TranslatableContract
 {
-    use SoftDeletes;
+    use Translatable;
+
+    public $translatedAttributes = ['title'];
 
     /**
      * @var array
      */
     protected $guarded = [];
+
+    /**
+     * @var bool
+     */
+    public $timestamps = false;
 
     /**
      * @return mixed
