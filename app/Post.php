@@ -7,6 +7,7 @@ use App\Filters\MaxCount;
 use App\Filters\Sort;
 use Astrotomic\Translatable\Translatable;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Pipeline\Pipeline;
 use Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
 

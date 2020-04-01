@@ -20,7 +20,7 @@ class PostContentsTableSeeder extends Seeder
             0 =>
             array (
                 'id' => 1,
-                'locale' => 'en',
+                'language_id' => 'en',
                 'post_id' => 1,
                 'title' => 'EN TITLE',
                 'content' => 'EN BODY',
@@ -32,7 +32,7 @@ class PostContentsTableSeeder extends Seeder
             1 =>
             array (
                 'id' => 2,
-                'locale' => 'tr',
+                'language_id' => 'tr',
                 'post_id' => 1,
                 'title' => 'TR BAŞLIK',
                 'content' => 'TR AÇIKLAMA',
@@ -44,7 +44,7 @@ class PostContentsTableSeeder extends Seeder
             2 =>
             array (
                 'id' => 3,
-                'locale' => 'en',
+                'language_id' => 'en',
                 'post_id' => 2,
                 'title' => 'EN SECOND TITLE',
                 'content' => 'EN SECOND BODY',
@@ -56,7 +56,7 @@ class PostContentsTableSeeder extends Seeder
             3 =>
             array (
                 'id' => 4,
-                'locale' => 'tr',
+                'language_id' => 'tr',
                 'post_id' => 2,
                 'title' => 'TR İKİNCİ BAŞLIK',
                 'content' => 'TR İKİNCİ AÇIKLAMA',
@@ -68,7 +68,7 @@ class PostContentsTableSeeder extends Seeder
             4 =>
             array (
                 'id' => 5,
-                'locale' => 'en',
+                'language_id' => 'en',
                 'post_id' => 3,
                 'title' => 'EN THIRD TITLE',
                 'content' => 'EN SECOND BODY',
@@ -80,7 +80,7 @@ class PostContentsTableSeeder extends Seeder
             5 =>
             array (
                 'id' => 6,
-                'locale' => 'tr',
+                'language_id' => 'tr',
                 'post_id' => 3,
                 'title' => 'TR ÜÇÜNCÜ BAŞLIK',
                 'content' => 'TR ÜÇÜNCÜ AÇIKLAMA',

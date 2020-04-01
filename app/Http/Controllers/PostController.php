@@ -73,6 +73,7 @@ class PostController extends Controller
     public function translatable()
     {
 //        $post = Post::first();
+
         $posts = Post::get();
 
         return view('post.translatable', [

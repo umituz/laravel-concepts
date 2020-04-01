@@ -119,7 +119,7 @@ return [
     | translation model.
     |
     */
-    'locale_key' => 'locale',
+    'locale_key' => 'language_id',
 
     /*
     |--------------------------------------------------------------------------
