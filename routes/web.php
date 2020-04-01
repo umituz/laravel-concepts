@@ -13,6 +13,7 @@ Route::get('/component', function () {
     ]);
 });
 
+
 Route::get('/http/get', 'HttpController@get');
 Route::get('/http/post', 'HttpController@post');
 
@@ -22,8 +23,10 @@ Route::get('/fluent', function () {
 
     $newString = Str::of($string)
         ->trim()
-    ->replaceLast('UZ','Kral');
+        ->replaceLast('UZ', 'Kral');
 
     dd($newString);
 
 });
+
+Route::get('/translatable', 'PostController@translatable');

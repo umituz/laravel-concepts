@@ -12,17 +12,25 @@ class PostsTableSeeder extends Seeder
      */
     public function run()
     {
-        
+
 
         \DB::table('posts')->delete();
-        
+
         \DB::table('posts')->insert(array (
-            0 => 
+            0 =>
             array (
                 'id' => 1,
             ),
+            1 =>
+            array (
+                'id' => 2,
+            ),
+            2 =>
+            array (
+                'id' => 3,
+            ),
         ));
-        
-        
+
+
     }
 }

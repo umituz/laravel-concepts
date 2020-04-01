@@ -69,4 +69,16 @@ class PostController extends Controller
 
         return "force Deleted!";
     }
+
+    public function translatable()
+    {
+//        $post = Post::first();
+        $posts = Post::get();
+
+        return view('post.translatable', [
+//            'post' => $post,
+            'posts' => $posts
+        ]);
+
+    }
 }

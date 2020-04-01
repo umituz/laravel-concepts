@@ -19,7 +19,7 @@ class CreatePostContentsTable extends Migration
             $table->unsignedBigInteger('post_id');
             $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade')->onUpdate('cascade');
             $table->string('title');
-            $table->text('body');
+            $table->text('content');
             $table->unsignedSmallInteger('active');
             $table->softDeletes();
             $table->timestamps();

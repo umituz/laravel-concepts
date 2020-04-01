@@ -18,7 +18,10 @@ class Post extends Model implements TranslatableContract
 {
     use Translatable;
 
-    public $translatedAttributes = ['title'];
+    /**
+     * @var array
+     */
+    public $translatedAttributes = ['title', 'content'];
 
     /**
      * @var array
@@ -29,6 +32,19 @@ class Post extends Model implements TranslatableContract
      * @var bool
      */
     public $timestamps = false;
+
+//    /**
+//     * @var array
+//     */
+//    protected $with = ['contents'];
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function contents()
+    {
+        return $this->hasMany(PostContent::class);
+    }
 
     /**
      * @return mixed
