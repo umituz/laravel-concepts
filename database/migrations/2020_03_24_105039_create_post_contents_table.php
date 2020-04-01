@@ -15,6 +15,7 @@ class CreatePostContentsTable extends Migration
     {
         Schema::create('post_contents', function (Blueprint $table) {
             $table->id();
+            $table->string('locale')->index();
             $table->unsignedBigInteger('post_id');
             $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade')->onUpdate('cascade');
             $table->string('title');

@@ -17,6 +17,7 @@
         "laravel/framework": "^7.0",
         "laravel/sanctum": "^2.0",
         "laravel/tinker": "^2.0",
+        "orangehill/iseed": "^2.6",
         "superbalist/flysystem-google-storage": "^7.2",
         "superbalist/laravel-google-cloud-storage": "^2.2",
         "yajra/laravel-datatables": "^1.5"

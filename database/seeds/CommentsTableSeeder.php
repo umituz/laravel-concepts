@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class CustomersTableSeeder extends Seeder
+class CommentsTableSeeder extends Seeder
 {
 
     /**
@@ -14,106 +14,87 @@ class CustomersTableSeeder extends Seeder
     {
         
 
-        \DB::table('customers')->delete();
+        \DB::table('comments')->delete();
         
-        \DB::table('customers')->insert(array (
+        \DB::table('comments')->insert(array (
             0 => 
             array (
                 'id' => 1,
-                'user_id' => 7,
-                'name' => 'Sheila Davis',
-                'contacted_at' => NULL,
-                'active' => 0,
+                'body' => '1.comment for post-1',
+                'commentable_id' => 1,
+                'commentable_type' => 'App\\Post',
                 'created_at' => '2020-04-01 08:40:08',
                 'updated_at' => '2020-04-01 08:40:08',
             ),
             1 => 
             array (
                 'id' => 2,
-                'user_id' => 8,
-                'name' => 'Mckayla Gottlieb Jr.',
-                'contacted_at' => NULL,
-                'active' => 0,
+                'body' => '2.comment for post-1',
+                'commentable_id' => 1,
+                'commentable_type' => 'App\\Post',
                 'created_at' => '2020-04-01 08:40:08',
                 'updated_at' => '2020-04-01 08:40:08',
             ),
             2 => 
             array (
                 'id' => 3,
-                'user_id' => 9,
-                'name' => 'Ottis Toy',
-                'contacted_at' => NULL,
-                'active' => 1,
+                'body' => '3.comment for post-1',
+                'commentable_id' => 1,
+                'commentable_type' => 'App\\Post',
                 'created_at' => '2020-04-01 08:40:08',
                 'updated_at' => '2020-04-01 08:40:08',
             ),
             3 => 
             array (
                 'id' => 4,
-                'user_id' => 10,
-                'name' => 'Prof. Anabelle Cartwright',
-                'contacted_at' => NULL,
-                'active' => 1,
+                'body' => '1.comment for video-1',
+                'commentable_id' => 1,
+                'commentable_type' => 'App\\Video',
                 'created_at' => '2020-04-01 08:40:08',
                 'updated_at' => '2020-04-01 08:40:08',
             ),
             4 => 
             array (
                 'id' => 5,
-                'user_id' => 11,
-                'name' => 'Burdette Ebert',
-                'contacted_at' => NULL,
-                'active' => 1,
+                'body' => '2.comment for video-1',
+                'commentable_id' => 1,
+                'commentable_type' => 'App\\Video',
                 'created_at' => '2020-04-01 08:40:08',
                 'updated_at' => '2020-04-01 08:40:08',
             ),
             5 => 
             array (
                 'id' => 6,
-                'user_id' => 12,
-                'name' => 'Mr. George Bauch',
-                'contacted_at' => NULL,
-                'active' => 0,
+                'body' => '1.comment for video-2',
+                'commentable_id' => 2,
+                'commentable_type' => 'App\\Video',
                 'created_at' => '2020-04-01 08:40:08',
                 'updated_at' => '2020-04-01 08:40:08',
             ),
             6 => 
             array (
                 'id' => 7,
-                'user_id' => 13,
-                'name' => 'Ms. Alexane Nicolas V',
-                'contacted_at' => NULL,
-                'active' => 0,
+                'body' => '2.comment for video-2',
+                'commentable_id' => 2,
+                'commentable_type' => 'App\\Video',
                 'created_at' => '2020-04-01 08:40:08',
                 'updated_at' => '2020-04-01 08:40:08',
             ),
             7 => 
             array (
                 'id' => 8,
-                'user_id' => 14,
-                'name' => 'Ward Runolfsdottir',
-                'contacted_at' => NULL,
-                'active' => 1,
+                'body' => '1.comment for video-3',
+                'commentable_id' => 3,
+                'commentable_type' => 'App\\Video',
                 'created_at' => '2020-04-01 08:40:08',
                 'updated_at' => '2020-04-01 08:40:08',
             ),
             8 => 
             array (
                 'id' => 9,
-                'user_id' => 15,
-                'name' => 'Delores Kuphal',
-                'contacted_at' => NULL,
-                'active' => 1,
-                'created_at' => '2020-04-01 08:40:08',
-                'updated_at' => '2020-04-01 08:40:08',
-            ),
-            9 => 
-            array (
-                'id' => 10,
-                'user_id' => 16,
-                'name' => 'Josephine Keebler',
-                'contacted_at' => NULL,
-                'active' => 1,
+                'body' => '2.comment for video-3',
+                'commentable_id' => 3,
+                'commentable_type' => 'App\\Video',
                 'created_at' => '2020-04-01 08:40:08',
                 'updated_at' => '2020-04-01 08:40:08',
             ),
