@@ -30,3 +30,7 @@ Route::get('/fluent', function () {
 });
 
 Route::get('/translatable', 'PostController@translatable');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
