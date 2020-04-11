@@ -30,6 +30,7 @@ Route::get('/fluent', function () {
 });
 
 Route::get('/translatable', 'PostController@translatable');
+Route::post('/upload', 'User\ProfileController@upload')->name('user.profile.upload');
 
 Auth::routes();
 
