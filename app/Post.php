@@ -9,6 +9,7 @@ use Astrotomic\Translatable\Translatable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Pipeline\Pipeline;
 use Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
+use Rennokki\QueryCache\Traits\QueryCacheable;
 
 /**
  * Class Post
@@ -16,7 +17,14 @@ use Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
  */
 class Post extends Model implements TranslatableContract
 {
-    use Translatable;
+    use Translatable, QueryCacheable;
+
+    /**
+     * QueryCacheable attributes
+     *
+     * @var int
+     */
+    public $cacheFor = 3600; // cache time, in seconds
 
     /**
      * @var array

@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Rennokki\QueryCache\Traits\QueryCacheable;
 
 /**
  * Class PostContent
@@ -10,6 +11,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class PostContent extends Model
 {
+    use QueryCacheable;
+
     /**
      * @var array
      */

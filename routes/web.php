@@ -3,9 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Str;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'WelcomeController@index');
 
 Route::get('/component', function () {
     return view('component', [
