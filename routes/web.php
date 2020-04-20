@@ -33,3 +33,5 @@ Route::post('/upload', 'User\ProfileController@upload')->name('user.profile.uplo
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/cache-file', 'CacheController@tagFile');
