@@ -26,6 +26,8 @@ class Post extends Model implements TranslatableContract
      */
     public $cacheFor = 3600; // cache time, in seconds
 
+    public $cacheTags = ['posts']; // equivalent of ->cacheTags(['posts'])
+
     /**
      * @var array
      */
