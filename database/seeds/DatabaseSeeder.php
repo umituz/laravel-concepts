@@ -3,6 +3,9 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Schema;
 
+/**
+ * Class DatabaseSeeder
+ */
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -26,6 +29,8 @@ class DatabaseSeeder extends Seeder
         $this->call(TagsTableSeeder::class);
         $this->call(UsersTableSeeder::class);
         $this->call(VideosTableSeeder::class);
+        $this->call(TestsTableSeeder::class);
+        $this->call(TestContentsTableSeeder::class);
 
         Schema::enableForeignKeyConstraints();
     }
