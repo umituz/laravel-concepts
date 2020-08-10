@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\PerformanceHelper;
 use Illuminate\Support\Facades\Storage;
 
 /**
@@ -28,10 +29,26 @@ class GoogleCdnController extends Controller
      */
     public function index()
     {
+
+        $startTime = microtime(TRUE);
+
         $portfolios = $this->disk->files('img/portfolio');
+
+//        $directories = $this->disk->directories('/img');
+//        $directories = $this->disk->files('/img');
+
+        $endTime = microtime(TRUE);
+
+        $a = PerformanceHelper::pageLoadTime($startTime, $endTime);
+
+        dd(
+            "here",
+            $a,
+            $portfolios
+        );
 
         $cdn = $this->disk->url('');
 
-        return view('storage.gcs.index', compact('portfolios','cdn'));
+        return view('storage.gcs.index', compact('portfolios', 'cdn'));
     }
 }
