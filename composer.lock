@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ef145d435cff40273b7ae2bc55ec03f6",
+    "content-hash": "dc53a73a02cf62e8d3d5a18b2adf5c1b",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -327,6 +327,74 @@
             "time": "2018-07-08T13:04:33+00:00"
         },
         {
+            "name": "cache/filesystem-adapter",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-cache/filesystem-adapter.git",
+                "reference": "d50680b6dabbe39f9831f5fc9efa61c09d936017"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-cache/filesystem-adapter/zipball/d50680b6dabbe39f9831f5fc9efa61c09d936017",
+                "reference": "d50680b6dabbe39f9831f5fc9efa61c09d936017",
+                "shasum": ""
+            },
+            "require": {
+                "cache/adapter-common": "^1.0",
+                "league/flysystem": "^1.0",
+                "php": "^5.6 || ^7.0",
+                "psr/cache": "^1.0",
+                "psr/simple-cache": "^1.0"
+            },
+            "provide": {
+                "psr/cache-implementation": "^1.0"
+            },
+            "require-dev": {
+                "cache/integration-tests": "^0.16",
+                "phpunit/phpunit": "^5.7.21"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Cache\\Adapter\\Filesystem\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Aaron Scherer",
+                    "email": "aequasi@gmail.com",
+                    "homepage": "https://github.com/aequasi"
+                },
+                {
+                    "name": "Tobias Nyholm",
+                    "email": "tobias.nyholm@gmail.com",
+                    "homepage": "https://github.com/Nyholm"
+                }
+            ],
+            "description": "A PSR-6 cache implementation using filesystem. This implementation supports tags",
+            "homepage": "http://www.php-cache.com/en/latest/",
+            "keywords": [
+                "cache",
+                "filesystem",
+                "psr-6",
+                "tag"
+            ],
+            "time": "2017-07-16T21:09:25+00:00"
+        },
+        {
             "name": "cache/hierarchical-cache",
             "version": "1.0.0",
             "source": {
@@ -387,6 +455,148 @@
                 "psr-6"
             ],
             "time": "2017-07-16T21:58:17+00:00"
+        },
+        {
+            "name": "cache/predis-adapter",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-cache/predis-adapter.git",
+                "reference": "6efc9b24247451553ad9974981d0fed65159b676"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-cache/predis-adapter/zipball/6efc9b24247451553ad9974981d0fed65159b676",
+                "reference": "6efc9b24247451553ad9974981d0fed65159b676",
+                "shasum": ""
+            },
+            "require": {
+                "cache/adapter-common": "^1.0",
+                "cache/hierarchical-cache": "^1.0",
+                "php": "^5.6 || ^7.0",
+                "predis/predis": "^1.1",
+                "psr/cache": "^1.0",
+                "psr/simple-cache": "^1.0"
+            },
+            "provide": {
+                "psr/cache-implementation": "^1.0"
+            },
+            "require-dev": {
+                "cache/integration-tests": "^0.16",
+                "phpunit/phpunit": "^5.7.21"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Cache\\Adapter\\Predis\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Aaron Scherer",
+                    "email": "aequasi@gmail.com",
+                    "homepage": "https://github.com/aequasi"
+                },
+                {
+                    "name": "Tobias Nyholm",
+                    "email": "tobias.nyholm@gmail.com",
+                    "homepage": "https://github.com/Nyholm"
+                }
+            ],
+            "description": "A PSR-6 cache implementation using Redis (Predis). This implementation supports tags",
+            "homepage": "http://www.php-cache.com/en/latest/",
+            "keywords": [
+                "cache",
+                "predis",
+                "psr-6",
+                "redis",
+                "tag"
+            ],
+            "time": "2017-07-16T21:09:25+00:00"
+        },
+        {
+            "name": "cache/redis-adapter",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-cache/redis-adapter.git",
+                "reference": "95ab6c72739951c6cb44d0051b338bfd5aff806b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-cache/redis-adapter/zipball/95ab6c72739951c6cb44d0051b338bfd5aff806b",
+                "reference": "95ab6c72739951c6cb44d0051b338bfd5aff806b",
+                "shasum": ""
+            },
+            "require": {
+                "cache/adapter-common": "^1.0",
+                "cache/hierarchical-cache": "^1.0",
+                "php": "^5.6 || ^7.0",
+                "psr/cache": "^1.0",
+                "psr/simple-cache": "^1.0"
+            },
+            "provide": {
+                "psr/cache-implementation": "^1.0"
+            },
+            "require-dev": {
+                "cache/integration-tests": "^0.16",
+                "phpunit/phpunit": "^5.7.21"
+            },
+            "suggest": {
+                "ext-redis": "The extension required to use this pool."
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Cache\\Adapter\\Redis\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Aaron Scherer",
+                    "email": "aequasi@gmail.com",
+                    "homepage": "https://github.com/aequasi"
+                },
+                {
+                    "name": "Tobias Nyholm",
+                    "email": "tobias.nyholm@gmail.com",
+                    "homepage": "https://github.com/Nyholm"
+                }
+            ],
+            "description": "A PSR-6 cache implementation using Redis (PhpRedis). This implementation supports tags",
+            "homepage": "http://www.php-cache.com/en/latest/",
+            "keywords": [
+                "cache",
+                "phpredis",
+                "psr-6",
+                "redis",
+                "tag"
+            ],
+            "time": "2017-07-16T21:09:25+00:00"
         },
         {
             "name": "cache/tag-interop",
@@ -3050,6 +3260,81 @@
                 }
             ],
             "time": "2020-07-20T17:29:33+00:00"
+        },
+        {
+            "name": "predis/predis",
+            "version": "v1.1.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/predis/predis.git",
+                "reference": "8be2418f0116572f1937083daf5cceb1bddc9f0d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/predis/predis/zipball/8be2418f0116572f1937083daf5cceb1bddc9f0d",
+                "reference": "8be2418f0116572f1937083daf5cceb1bddc9f0d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.9"
+            },
+            "require-dev": {
+                "cweagans/composer-patches": "^1.6",
+                "phpunit/phpunit": "~4.8"
+            },
+            "suggest": {
+                "ext-curl": "Allows access to Webdis when paired with phpiredis",
+                "ext-phpiredis": "Allows faster serialization and deserialization of the Redis protocol"
+            },
+            "type": "library",
+            "extra": {
+                "composer-exit-on-patch-failure": true,
+                "patches": {
+                    "phpunit/phpunit-mock-objects": {
+                        "Fix PHP 7 and 8 compatibility": "./tests/phpunit_mock_objects.patch"
+                    },
+                    "phpunit/phpunit": {
+                        "Fix PHP 7 compatibility": "./tests/phpunit_php7.patch",
+                        "Fix PHP 8 compatibility": "./tests/phpunit_php8.patch"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Predis\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniele Alessandri",
+                    "email": "suppakilla@gmail.com",
+                    "homepage": "http://clorophilla.net",
+                    "role": "Creator & Maintainer"
+                },
+                {
+                    "name": "Till Krüss",
+                    "homepage": "https://till.im",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Flexible and feature-complete Redis client for PHP and HHVM",
+            "homepage": "http://github.com/predis/predis",
+            "keywords": [
+                "nosql",
+                "predis",
+                "redis"
+            ],
+            "funding": [
+                {
+                    "url": "https://github.com/sponsors/tillkruss",
+                    "type": "github"
+                }
+            ],
+            "time": "2020-08-29T22:15:08+00:00"
         },
         {
             "name": "psr/cache",
@@ -8084,6 +8369,7 @@
             "keywords": [
                 "tokenizer"
             ],
+            "abandoned": true,
             "time": "2019-09-17T06:23:10+00:00"
         },
         {
