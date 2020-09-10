@@ -37,3 +37,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/cache-file', 'CacheController@tagFile');
 
 Route::get('/cdn', 'GoogleCdnController@index');
+
+Route::get('/jobs', 'JobsController@index');

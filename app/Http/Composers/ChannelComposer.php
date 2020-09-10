@@ -5,6 +5,10 @@ namespace App\Http\Composers;
 use App\Channel;
 use Illuminate\View\View;
 
+/**
+ * Class ChannelComposer
+ * @package App\Http\Composers
+ */
 class ChannelComposer
 {
     public function compose(View $view)
