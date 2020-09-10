@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Jobs\SendEmailJob;
+use Carbon\Carbon;
 
 /**
  * Class JobsController
@@ -10,9 +11,13 @@ use App\Jobs\SendEmailJob;
  */
 class JobsController extends Controller
 {
+    /**
+     * @return string
+     */
     public function index()
     {
-        dispatch(new SendEmailJob());
+        $job = (new SendEmailJob())->delay(Carbon::now()->addSeconds(5));
+        dispatch($job);
         return "OK";
     }
 }
