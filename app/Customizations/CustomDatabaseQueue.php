@@ -22,7 +22,7 @@ class CustomDatabaseQueue extends DatabaseQueue
     protected function buildDatabaseRecord($queue, $payload, $availableAt, $attempts = 0)
     {
         return [
-            'server_id' => 1,
+            'server_id' => config('queue.connections.database.server_id'),
             'queue' => $queue,
             'attempts' => $attempts,
             'reserved_at' => null,
