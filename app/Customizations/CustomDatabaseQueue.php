@@ -31,4 +31,20 @@ class CustomDatabaseQueue extends DatabaseQueue
             'payload' => $payload,
         ];
     }
+
+    /**
+     * Marshal the reserved job into a DatabaseJob instance.
+     *
+     * @param  string  $queue
+     * @param  \Illuminate\Queue\Jobs\DatabaseJobRecord  $job
+     * @return \Illuminate\Queue\Jobs\DatabaseJob
+     */
+    protected function marshalJob($queue, $job)
+    {
+        $job = $this->markJobAsReserved($job);
+
+        return new CustomDatabaseJob(
+            $this->container, $this, $job, $this->connectionName, $queue
+        );
+    }
 }
