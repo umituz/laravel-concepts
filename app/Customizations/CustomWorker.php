@@ -31,11 +31,11 @@ class CustomWorker extends Worker
             // Before reserving any jobs, we will make sure this queue is not paused and
             // if it is we will just pause this worker for a given amount of time and
             // make sure we do not need to kill this worker process off completely.
-            if (!$this->daemonShouldRun($options, $connectionName, $queue)) {
-                $this->pauseWorker($options, $lastRestart);
-
-                continue;
-            }
+//            if (!$this->daemonShouldRun($options, $connectionName, $queue)) {
+//                $this->pauseWorker($options, $lastRestart);
+//
+//                continue;
+//            }
 
             // First, we will attempt to get the next job off of the queue. We will also
             // register the timeout handler and reset the alarm for this job so it is
@@ -77,8 +77,6 @@ class CustomWorker extends Worker
             // the queue should restart based on other indications. If so, we'll stop
             // this worker and let whatever is "monitoring" it restart the process.
             $this->stopIfNecessary($options, $lastRestart, $job);
-
-
         }
     }
 }
