@@ -39,3 +39,5 @@ Route::get('/cache-file', 'CacheController@tagFile');
 Route::get('/cdn', 'GoogleCdnController@index');
 
 Route::get('/jobs', 'JobsController@index');
+
+Route::get('/custom-jobs', 'JobsController@customJob');
