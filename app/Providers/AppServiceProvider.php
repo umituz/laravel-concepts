@@ -4,11 +4,7 @@ namespace App\Providers;
 
 use App\Billing\BankPaymentGateway;
 use App\Billing\CreditPaymentGateway;
-use App\Channel;
 use App\Contracts\PaymentGatewayContract;
-use App\Http\Composers\ChannelComposer;
-use App\Services\PostcardSendingService;
-use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
