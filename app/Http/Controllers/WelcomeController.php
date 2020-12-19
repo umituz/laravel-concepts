@@ -2,11 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use App\Post;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Cache;
-use Illuminate\Support\Facades\DB;
 
 /**
  * Class WelcomeController
@@ -21,10 +17,7 @@ class WelcomeController extends Controller
      */
     public function index()
     {
-        $posts = Post::with(['contents' => function ($query) {
-            return $query->cacheFor(60 * 60)//                ->cacheTags(['page-with-contents'])
-                ;
-        }])->first();
+        $posts = Post::with(['contents'])->first();
         return view('welcome', [
             'posts' => $posts
         ]);
