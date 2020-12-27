@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Helpers\MacroHelper;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Str;
 
@@ -25,5 +25,10 @@ class MacroableController extends Controller
     public function errorJson()
     {
         dd(Response::errorJson("Heeey!"));
+    }
+
+    public function ourMacro()
+    {
+        return MacroHelper::success();
     }
 }

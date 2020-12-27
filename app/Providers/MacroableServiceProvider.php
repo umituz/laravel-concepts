@@ -2,12 +2,18 @@
 
 namespace App\Providers;
 
+use App\Helpers\MacroHelper;
+use App\Mixins\StatusMixin;
 use App\Mixins\StrMixin;
 use Illuminate\Routing\ResponseFactory;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
 
-class MacroablesProvider extends ServiceProvider
+/**
+ * Class MacroableServiceProvider
+ * @package App\Providers
+ */
+class MacroableServiceProvider extends ServiceProvider
 {
     /**
      * Register services.
@@ -22,10 +28,14 @@ class MacroablesProvider extends ServiceProvider
     /**
      * Bootstrap services.
      *
-     * @throws \ReflectionException
+     * @return void
      */
     public function boot()
     {
+        MacroHelper::macro('test',function(){
+            return "test";
+        });
+
         Str::macro('partNumber', function ($part) {
             return 'PROVIDER-' . substr($part, 0, 3) . '-' . substr($part, 3);
         });
@@ -38,5 +48,7 @@ class MacroablesProvider extends ServiceProvider
                 'error_code' => 123
             ];
         });
+
+        MacroHelper::mixin(new StatusMixin());
     }
 }

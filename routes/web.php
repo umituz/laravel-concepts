@@ -41,3 +41,5 @@ Route::get('/cdn', 'GoogleCdnController@index');
 Route::get('/jobs', 'JobsController@index');
 
 Route::get('/custom-jobs', 'JobsController@customJob');
+
+Route::get('/our-macro', 'MacroableController@ourMacro');
