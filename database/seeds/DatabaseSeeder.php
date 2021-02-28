@@ -15,7 +15,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        Schema::disableForeignKeyConstraints();
+        $defaultDatabase = config('database.default');
+        if ($defaultDatabase == 'mysql') {
+            Schema::disableForeignKeyConstraints();
+        }
 
         $this->call(ChannelsTableSeeder::class);
         $this->call(CommentsTableSeeder::class);
@@ -32,6 +35,8 @@ class DatabaseSeeder extends Seeder
         $this->call(TestsTableSeeder::class);
         $this->call(TestContentsTableSeeder::class);
 
-        Schema::enableForeignKeyConstraints();
+        if ($defaultDatabase == 'mysql') {
+            Schema::enableForeignKeyConstraints();
+        }
     }
 }
