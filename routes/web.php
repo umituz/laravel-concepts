@@ -43,3 +43,9 @@ Route::get('/jobs', 'JobsController@index');
 Route::get('/custom-jobs', 'JobsController@customJob');
 
 Route::get('/our-macro', 'MacroableController@ourMacro');
+
+Route::group(['prefix' => 'export'], function () {
+    Route::get('/users/collection-method-1', 'ExcelController@userCollectionMethod1');
+    Route::get('/users/collection-method-2', 'ExcelController@userCollectionMethod2');
+    Route::get('/users/collection-method-3', 'ExcelController@userCollectionMethod3');
+});
