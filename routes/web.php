@@ -48,4 +48,6 @@ Route::group(['prefix' => 'export'], function () {
     Route::get('/users/collection-method-1', 'ExcelController@userCollectionMethod1');
     Route::get('/users/collection-method-2', 'ExcelController@userCollectionMethod2');
     Route::get('/users/collection-method-3', 'ExcelController@userCollectionMethod3');
+    Route::get('/users/array-method-4', 'ExcelController@arrayMethod4');
+    Route::get('/users/view-method-5', 'ExcelController@viewMethod5');
 });
