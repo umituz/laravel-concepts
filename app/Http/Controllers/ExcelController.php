@@ -33,6 +33,10 @@ class ExcelController extends Controller
      */
     public function userCollectionMethod3(\Maatwebsite\Excel\Excel $excel): BinaryFileResponse
     {
-        return $excel->download(new UsersExport(), 'users.xlsx');
+//        return $excel->download(new UsersExport(), 'users.xlsx');
+//        return $excel->download(new UsersExport(), 'users.csv',\Maatwebsite\Excel\Excel::CSV);
+        return $excel->download(new UsersExport(), 'users.pdf',\Maatwebsite\Excel\Excel::DOMPDF);
     }
+
+
 }
