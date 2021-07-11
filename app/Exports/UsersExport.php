@@ -12,16 +12,20 @@ use Maatwebsite\Excel\Concerns\Exportable;
 use Maatwebsite\Excel\Concerns\FromArray;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\FromView;
+use Maatwebsite\Excel\Concerns\ShouldAutoSize;
+use Maatwebsite\Excel\Concerns\WithMapping;
 
 /**
  * Class UsersExport
  * @package App\Exports
  */
 class UsersExport implements
-//    FromCollection,
+    FromCollection,
+    ShouldAutoSize,
+    WithMapping
 //    Responsable,
 //    FromArray,
-    FromView
+//    FromView
 {
     use Exportable;
 
@@ -33,10 +37,23 @@ class UsersExport implements
     /**
      * @return Collection
      */
-//    public function collection()
-//    {
-//        return User::all();
-//    }
+    public function collection()
+    {
+        return User::all();
+    }
+
+    /**
+     * @param mixed $user
+     * @return array
+     */
+    public function map($user): array
+    {
+        return [
+            $user->id,
+            $user->email,
+            $user->created_at
+        ];
+    }
 
     /**
      * @return string[][]
@@ -54,10 +71,10 @@ class UsersExport implements
     /**
      * @return Application|Factory|View
      */
-    public function view() : View
-    {
-        return view('exports.users', [
-            'users' => User::all()
-        ]);
-    }
+//    public function view() : View
+//    {
+//        return view('exports.users', [
+//            'users' => User::all()
+//        ]);
+//    }
 }

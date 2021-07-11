@@ -34,6 +34,7 @@ class DatabaseSeeder extends Seeder
         $this->call(VideosTableSeeder::class);
         $this->call(TestsTableSeeder::class);
         $this->call(TestContentsTableSeeder::class);
+        $this->call(UserAddressesTableSeeder::class);
 
         if ($defaultDatabase == 'mysql') {
             Schema::enableForeignKeyConstraints();
