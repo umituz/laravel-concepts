@@ -1,0 +1,80 @@
+<?php
+
+use Illuminate\Config\Repository;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+/**
+ * Class CreateGalleryTable
+ */
+class CreateGalleryTable extends Migration
+{
+	/**
+	 * Returns database config details
+	 *
+	 * @param $key
+	 * @return Repository|mixed
+	 */
+	protected function database($key)
+	{
+		return config('gallery.database.' . $key);
+	}
+	
+	/**
+	 * Run the migrations.
+	 *
+	 * @return void
+	 */
+	public function up()
+	{
+		if (!Schema::hasTable($this->database('gallery.baseTable'))) {
+			
+			Schema::create($this->database('gallery.baseTable'), function (Blueprint $table) {
+				$table->bigIncrements($this->database('gallery.identity'));
+				$table->string('path')->unique();
+				$table->char('mime_type', 30)->nullable();
+				$table->unsignedBigInteger($this->database('user.relatedColumn'))->nullable();
+				$table->foreign($this->database('user.relatedColumn'))
+					->references($this->database('user.identity'))
+					->on($this->database('user.table'))
+					->onDelete('cascade')
+					->onUpdate('cascade');
+				//$table->softDeletes();
+				$table->timestamps();
+			});
+			
+		}
+		
+		if (!Schema::hasTable($this->database('gallery.relationshipTable'))) {
+			
+			Schema::create($this->database('gallery.relationshipTable'), function (Blueprint $table) {
+				$table->bigIncrements('id');
+				$table->unsignedBigInteger($this->database('gallery.relatedColumn'));
+				$table->foreign($this->database('gallery.relatedColumn'))
+					->references($this->database('gallery.identity'))
+					->on($this->database('gallery.baseTable'))
+					->onDelete('cascade')
+					->onUpdate('cascade');
+				$table->morphs($this->database('gallery.polymorphism'));
+				$table->boolean('cover')->default(false);
+			});
+			
+		}
+	}
+	
+	/**
+	 * Reverse the migrations.
+	 *
+	 * @return void
+	 */
+	public function down()
+	{
+		Schema::disableForeignKeyConstraints();
+		
+		Schema::dropIfExists($this->database('baseTable'));
+		Schema::dropIfExists($this->database('relationshipTable'));
+		
+		Schema::enableForeignKeyConstraints();
+	}
+}

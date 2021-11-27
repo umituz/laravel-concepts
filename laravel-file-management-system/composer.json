@@ -1,0 +1,58 @@
+{
+    "name": "umituz/laravel-gallery",
+    "description": "Laravel gallery",
+    "keywords": [
+        "umituz",
+        "laravel",
+        "gallery",
+        "media library",
+        "file manager",
+        "laravel gallery"
+    ],
+    "homepage": "https://github.com/umituz/laravel-gallery",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ümit UZ",
+            "email": "umituz998@gmail.com",
+            "homepage": "https://umituz.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php" : "^7.2",
+        "illuminate/auth": "^5.8|^6.0",
+        "illuminate/container": "^5.8|^6.0",
+        "illuminate/contracts": "^5.8|^6.0",
+        "illuminate/database": "^5.8|^6.0",
+        "umituz/laravel-helpers": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Gallery\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Gallery\\Test\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Gallery\\Providers\\GalleryLibraryServiceProvider"
+            ],
+            "aliases": {
+                "GalleryHelper": "Gallery\\Helpers\\GalleryHelper",
+                "HtmlHelper": "Gallery\\Helpers\\HtmlHelper",
+                "StorageHelper": "Gallery\\Helpers\\StorageHelper",
+                "GalleryEnumeration" : "Gallery\\Enumerations\\GalleryEnumeration"
+            }
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
