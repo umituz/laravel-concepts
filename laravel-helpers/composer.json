@@ -1,0 +1,44 @@
+{
+    "name": "umituz/laravel-helpers",
+    "description": "Many useful helpers for Laravel!",
+    "keywords": [
+        "umituz",
+        "laravel",
+        "helpers"
+    ],
+    "homepage": "https://github.com/umituz/laravel-helpers",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ümit UZ",
+            "email": "umituz998@gmail.com",
+            "homepage": "https://umituz.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "LaravelHelper\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "LaravelHelper\\Providers\\LaravelHelperServiceProvider"
+            ],
+            "aliases": {
+                "SecurityHelper": "LaravelHelper\\Helpers\\SecurityHelper",
+                "CheckHelper": "LaravelHelper\\Helpers\\CheckHelper",
+                "CollectionHelper": "LaravelHelper\\Helpers\\CollectionHelper",
+                "FormHelper": "LaravelHelper\\Helpers\\FormHelper",
+                "FileHelper": "LaravelHelper\\Helpers\\FileHelper",
+                "RegexHelper": "LaravelHelper\\Helpers\\RegexHelper",
+                "ArrayHelper": "LaravelHelper\\Helpers\\ArrayHelper",
+                "DatabaseHelper": "LaravelHelper\\Helpers\\DatabaseHelper",
+                "PackageHelper": "LaravelHelper\\Helpers\\PackageHelper",
+                "ClassHelper": "LaravelHelper\\Helpers\\ClassHelper"
+            }
+        }
+    }
+}
