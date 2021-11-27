@@ -1,0 +1,12 @@
+<?php
+
+namespace App\Helpers;
+
+/**
+ * Class DummyHelper
+ * @package App\Helpers\DummyHelper
+ */
+class DummyHelper
+{
+	//
+}

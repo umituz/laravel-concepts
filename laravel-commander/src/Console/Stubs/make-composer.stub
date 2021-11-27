@@ -1,0 +1,12 @@
+<?php
+
+namespace App\Http\Views;
+
+/**
+ * Class DummyComposer
+ * @package App\Http\Views\DummyComposer
+ */
+class DummyComposer
+{
+	//
+}

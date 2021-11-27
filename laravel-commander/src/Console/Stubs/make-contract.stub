@@ -1,0 +1,12 @@
+<?php
+
+namespace App\Contracts;
+
+/**
+ * Interface DummyContract
+ * @package App\Contracts\DummyContract
+ */
+interface DummyContract
+{
+	//
+}

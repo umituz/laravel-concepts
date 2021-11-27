@@ -1,0 +1,22 @@
+<?php
+
+namespace App\Facades;
+
+use Illuminate\Support\Facades\Facade;
+
+/**
+ * Class DummyFacade
+ * @package App\Facades\DummyFacade
+ */
+class DummyFacade extends Facade
+{
+    /**
+     * Creates an alias for base class
+     *
+     * @return string
+     */
+	protected static function getFacadeAccessor()
+    {
+        return '';
+    }
+}

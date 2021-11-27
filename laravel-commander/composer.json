@@ -1,0 +1,39 @@
+{
+    "name": "umituz/laravel-commander",
+    "description": "Many Laravel Commands",
+    "keywords": [
+        "umituz",
+        "laravel",
+        "laravel commands"
+    ],
+    "homepage": "https://github.com/umituz/laravel-commander",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ümit UZ",
+            "email": "umituz998@gmail.com",
+            "homepage": "https://umituz.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "orangehill/iseed": "^2.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Commander\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Commander\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Commander\\Providers\\CommanderServiceProvider"
+            ]
+        }
+    }
+}

@@ -1,0 +1,12 @@
+<?php
+
+namespace App\Repositories;
+
+/**
+ * Class DummyRepository
+ * @package App\Repositories\DummyRepository
+ */
+class DummyRepository
+{
+	//
+}

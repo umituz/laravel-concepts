@@ -1,0 +1,12 @@
+<?php
+
+namespace App\Enumerations;
+
+/**
+ * Class DummyEnumeration
+ * @package App\Enumerations\DummyEnumeration
+ */
+class DummyEnumeration
+{
+	//
+}
