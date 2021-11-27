@@ -1,0 +1,16 @@
+runtime: php72
+env: flex
+
+runtime_config:
+  document_root: public
+
+  # Skip ".env", which is for local development
+skip_files:
+  - .env
+env_variables:
+  APP_ENV: 'production'
+  APP_KEY: base64:yUrh9CUYRoUOvFNN/w8EAmoTJY0szwOYhd1iH7dWDTo=
+  APP_STORAGE: /tmp
+  APP_LOG: errorlog
+  APP_LOG_LEVEL: debug
+  VIEW_COMPILED_PATH: /tmp
