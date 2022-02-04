@@ -14,7 +14,7 @@ services:
 
         volumes:
             - ./:/var/www
-            - ./docker-files/php/local.ini:/usr/local/etc/php/conf.d/local.ini
+            - ./docker/php/local.ini:/usr/local/etc/php/conf.d/local.ini
 
         networks:
             - app-network
@@ -32,7 +32,7 @@ services:
 
         volumes:
             - ./:/var/www
-            - ./docker-files/nginx/conf.d/:/etc/nginx/conf.d/
+            - ./docker/nginx/conf.d/:/etc/nginx/conf.d/
 
         networks:
             - app-network
@@ -53,7 +53,7 @@ services:
 
         volumes:
             - mariadbdata:/var/lib/mysql
-            - ./docker-files/mysql/my.cnf:/etc/mysql/my.cnf
+            - ./docker/mysql/my.cnf:/etc/mysql/my.cnf
 
         networks:
             - app-network
