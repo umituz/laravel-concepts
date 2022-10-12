@@ -51,3 +51,7 @@ Route::group(['prefix' => 'export'], function () {
     Route::get('/users/array-method-4', 'ExcelController@arrayMethod4');
     Route::get('/users/view-method-5', 'ExcelController@viewMethod5');
 });
+
+Route::group(['prefix' => 'stored-procedures'], function () {
+    Route::get('/get-user-by-id/{id}', 'StoredProceduresController@getUserById');
+});

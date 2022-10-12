@@ -4,20 +4,16 @@ namespace App\Providers;
 
 use App\Repositories\CustomerRepository;
 use App\Repositories\CustomerRepositoryInterface;
+use App\Repositories\UserRepository;
+use App\Repositories\UserRepositoryInterface;
 use Illuminate\Support\ServiceProvider;
 
-class RepositoriesServiceProvider extends ServiceProvider
+/**
+ * Class RepositoriesServiceProvider
+ * @package App\Providers
+ */
+class RepositoryServiceProvider extends ServiceProvider
 {
-    /**
-     * Register services.
-     *
-     * @return void
-     */
-    public function register()
-    {
-        //
-    }
-
     /**
      * Bootstrap services.
      *
@@ -25,6 +21,7 @@ class RepositoriesServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        $this->app->bind(UserRepositoryInterface::class, UserRepository::class);
         $this->app->singleton(CustomerRepositoryInterface::class, CustomerRepository::class);
     }
 }
