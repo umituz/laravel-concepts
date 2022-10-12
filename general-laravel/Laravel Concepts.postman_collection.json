@@ -1,0 +1,38 @@
+{
+	"info": {
+		"_postman_id": "e436ce2f-b203-434c-af9b-f355e563c63c",
+		"name": "Laravel Concepts",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4271692"
+	},
+	"item": [
+		{
+			"name": "General Laravel",
+			"item": [
+				{
+					"name": "Stored Procedures",
+					"item": [
+						{
+							"name": "Get User By Id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{apiUrl}}stored-procedures/get-user-by-id/1",
+									"host": [
+										"{{apiUrl}}stored-procedures"
+									],
+									"path": [
+										"get-user-by-id",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
