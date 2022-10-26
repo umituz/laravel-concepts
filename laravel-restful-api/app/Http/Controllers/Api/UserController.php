@@ -50,8 +50,6 @@ class UserController extends ApiController
 
         $data->each->setAppends(['full_name']);
 
-//        return response($data, 200);
-
         return $this->apiResponse($data, 'Users fetched successfully', JsonResponse::HTTP_OK);
     }
 
@@ -84,24 +82,17 @@ class UserController extends ApiController
         $user->password = bcrypt($request->password);
         $user->save();
 
-//        return response([
-//            'data' => $user,
-//            'message' => 'Record added successfully'
-//        ], 201);
-
         return $this->apiResponse($user, 'Users added successfully', JsonResponse::HTTP_CREATED);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param User $user
+     * @param $id
      * @return JsonResponse
      */
     public function show($id)
     {
-//        return $user;
-
         try {
 
             $user = User::findOrFail($id);
@@ -144,11 +135,6 @@ class UserController extends ApiController
         $user->password = bcrypt($request->password);
         $user->save();
 
-//        return response([
-//            'data' => $user,
-//            'message' => 'Record edited successfully'
-//        ], 200);
-
         return $this->apiResponse($user, 'User edited successfully', JsonResponse::HTTP_OK);
     }
 
@@ -162,10 +148,6 @@ class UserController extends ApiController
     public function destroy(User $user)
     {
         $user->delete();
-
-//        return response([
-//            'message' => 'Record deleted successfully'
-//        ], 200);
 
         return $this->apiResponse($user, 'User deleted successfully', JsonResponse::HTTP_OK);
     }

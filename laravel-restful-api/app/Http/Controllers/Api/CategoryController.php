@@ -6,7 +6,6 @@ use App\Category;
 use Exception;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
@@ -15,15 +14,13 @@ class CategoryController extends ApiController
     /**
      * Display a listing of the resource.
      *
-     * @return Response
+     * @return JsonResponse
      */
     public function index()
     {
         $category = Category::with('products')->get();
 
         $category = $category->makeHidden('slug');
-
-//        return response($category, 200);
 
         return $this->apiResponse($category, 'Categories fetched successfully', JsonResponse::HTTP_OK);
     }
@@ -32,7 +29,7 @@ class CategoryController extends ApiController
      * Store a newly created resource in storage.
      *
      * @param Request $request
-     * @return Response
+     * @return JsonResponse
      */
     public function store(Request $request)
     {
@@ -41,11 +38,6 @@ class CategoryController extends ApiController
         $category->slug = Str::slug($request->name);
         $category->save();
 
-//        return response([
-//            'data' => $category,
-//            'message' => 'Record added successfully'
-//        ], 201);
-
         return $this->apiResponse($category, 'Categories added successfully', JsonResponse::HTTP_CREATED);
     }
 
@@ -53,12 +45,10 @@ class CategoryController extends ApiController
      * Display the specified resource.
      *
      * @param Category $category
-     * @return Category
+     * @return JsonResponse
      */
     public function show(Category $category)
     {
-//        return $category;
-
         return $this->apiResponse($category, 'Category fetched successfully', JsonResponse::HTTP_OK);
     }
 
@@ -67,18 +57,13 @@ class CategoryController extends ApiController
      *
      * @param Request $request
      * @param Category $category
-     * @return Response
+     * @return JsonResponse
      */
     public function update(Request $request, Category $category)
     {
         $category->name = $request->name;
         $category->slug = Str::slug($request->name);
         $category->save();
-
-//        return response([
-//            'data' => $category,
-//            'message' => 'Record edited successfully'
-//        ], 200);
 
         return $this->apiResponse($category, 'Category edited successfully', JsonResponse::HTTP_OK);
     }
@@ -87,16 +72,12 @@ class CategoryController extends ApiController
      * Remove the specified resource from storage.
      *
      * @param Category $category
-     * @return Response
+     * @return JsonResponse
      * @throws Exception
      */
     public function destroy(Category $category)
     {
         $category->delete();
-
-//        return response([
-//            'message' => 'Record deleted successfully'
-//        ], 200);
 
         return $this->apiResponse($category, 'Category deleted successfully', JsonResponse::HTTP_OK);
     }

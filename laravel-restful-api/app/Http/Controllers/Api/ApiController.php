@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Enumerations\ApiEnumeration;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\JsonResponse;
 
 /**
  * Class ApiController
@@ -18,19 +19,19 @@ class ApiController extends Controller
      * @param null $message
      * @param int $code
      * @param int $status
-     * @return \Illuminate\Http\JsonResponse
+     * @return JsonResponse
      */
-    public function apiResponse($data, $message = null, $code = 200, $status = ApiEnumeration::SUCCESS)
+    public function apiResponse($data, $message = null, int $code = 200, int $status = ApiEnumeration::SUCCESS): JsonResponse
     {
         $response = array();
 
-        $response['success'] = $status == ApiEnumeration::SUCCESS ? true : false;
+        $response['success'] = $status == ApiEnumeration::SUCCESS;
 
-        if (isset($message) && !is_null($message)) {
+        if (isset($message)) {
             $response['message'] = $message;
         }
 
-        if (isset($data) && !is_null($data)) {
+        if (isset($data)) {
 
             if ($status != ApiEnumeration::ERROR) {
                 $response['data'] = $data;
@@ -39,7 +40,6 @@ class ApiController extends Controller
             if ($status == ApiEnumeration::ERROR) {
                 $response['errors'] = $data;
             }
-
         }
 
         return response()->json($response, $code);
