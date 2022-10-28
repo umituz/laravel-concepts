@@ -16,7 +16,7 @@ class ProductController extends ApiController
      * @param Request $request
      * @return JsonResponse
      * @OA\Get(
-     *     path="/api/products",
+     *     path="/products",
      *     tags={"products"},
      *     summary="List all products",
      *     operationId="index",
@@ -82,7 +82,7 @@ class ProductController extends ApiController
      * @param Request $request
      * @return JsonResponse
      * @OA\POST(
-     *     path="/api/products",
+     *     path="/products",
      *     tags={"products"},
      *     summary="Create a new product",
      *     operationId="store",
@@ -126,7 +126,7 @@ class ProductController extends ApiController
      * @param $id
      * @return JsonResponse
      * @OA\Get(
-     *     path="/api/products/{id}",
+     *     path="/products/{id}",
      *     tags={"products"},
      *     summary="Info for a specific product",
      *     operationId="show",
@@ -176,7 +176,7 @@ class ProductController extends ApiController
      * @param Product $product
      * @return JsonResponse
      * @OA\PUT(
-     *     path="/api/products/{id}",
+     *     path="/products/{id}",
      *     tags={"products"},
      *     summary="Update the product",
      *     operationId="update",
@@ -229,7 +229,7 @@ class ProductController extends ApiController
      * @return JsonResponse
      * @throws \Exception
      * @OA\DELETE(
-     *     path="/api/products/{id}",
+     *     path="/products/{id}",
      *     tags={"products"},
      *     summary="Delete the product",
      *     operationId="destroy",

@@ -13,8 +13,18 @@
         },
         "version": "1.0.0"
     },
+    "servers": [
+        {
+            "url": "http://127.0.0.1:8000/api",
+            "description": "Laravel API Test Server"
+        },
+        {
+            "url": "http://app.127.0.0.1:8000/api",
+            "description": "Laravel API Production Server"
+        }
+    ],
     "paths": {
-        "/api/products": {
+        "/products": {
             "get": {
                 "tags": [
                     "products"
@@ -124,7 +134,7 @@
                 ]
             }
         },
-        "/api/products/{id}": {
+        "/products/{id}": {
             "get": {
                 "tags": [
                     "products"
@@ -366,5 +376,9 @@
                 "url": "http://127.0.0.1:8000/api/documentation/product"
             }
         }
-    ]
+    ],
+    "externalDocs": {
+        "description": "Find out more about Laravel API",
+        "url": "http://127.0.0.1:8000/external-documentation"
+    }
 }

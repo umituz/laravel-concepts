@@ -19,6 +19,21 @@ use Illuminate\Http\JsonResponse;
  *      @OA\License(name="Apache 2.0", url="https://www.apache.org/licenses/LICENSE-2.0.html")
  * )
  *
+ * @OA\Server(
+ *     description="Laravel API Test Server",
+ *     url="http://127.0.0.1:8000/api"
+ * )
+ *
+ * @OA\Server(
+ *     description="Laravel API Production Server",
+ *     url="http://app.127.0.0.1:8000/api"
+ * )
+ *
+ * @OA\ExternalDocumentation(
+ *     description="Find out more about Laravel API",
+ *     url="http://127.0.0.1:8000/external-documentation"
+ * )
+ *
  * @OA\Schema(
  *     title="ApiResponse",
  *     description="ApiResponse model",
