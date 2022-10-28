@@ -19,6 +19,7 @@ class ProductController extends ApiController
      *     path="/api/products",
      *     tags={"products"},
      *     summary="List all products",
+     *     operationId="index",
      *     @OA\Parameter (
      *          name="limit",
      *          in="query",
@@ -92,6 +93,34 @@ class ProductController extends ApiController
      *
      * @param $id
      * @return JsonResponse
+     * @OA\Get(
+     *     path="/api/products/{id}",
+     *     tags={"products"},
+     *     summary="Info for a specific product",
+     *     operationId="show",
+     *     @OA\Parameter (
+     *          name="id",
+     *          in="path",
+     *          description="The id column of the product to retrieve",
+     *          required=true,
+     *          @OA\Schema(type="integer", format="int32")
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="Product detail response ",
+     *         @OA\JsonContent(ref="#/components/schemas/ApiResponse")
+     *     ),
+     *     @OA\Response(
+     *         response=401,
+     *         description="Unauthenticated",
+     *         @OA\JsonContent()
+     *     ),
+     *     @OA\Response(
+     *         response="default",
+     *         description="Unexpected Error",
+     *         @OA\JsonContent()
+     *     )
+     * )
      */
     public function show($id)
     {

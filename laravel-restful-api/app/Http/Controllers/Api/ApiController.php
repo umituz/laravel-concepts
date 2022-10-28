@@ -18,6 +18,19 @@ use Illuminate\Http\JsonResponse;
  *      @OA\Contact(email="umituz998@gmail.com"),
  *      @OA\License(name="Apache 2.0", url="https://www.apache.org/licenses/LICENSE-2.0.html")
  * )
+ *
+ * @OA\Schema(
+ *     title="ApiResponse",
+ *     description="ApiResponse model",
+ *     type="object",
+ *     schema="ApiResponse",
+ *     properties={
+            @OA\Property(property="success", type="boolean"),
+            @OA\Property(property="data", type="object"),
+            @OA\Property(property="message", type="string"),
+            @OA\Property(property="errors", type="object"),
+ *     },
+ * )
  */
 class ApiController extends Controller
 {
