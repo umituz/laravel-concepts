@@ -31,6 +31,16 @@ use Illuminate\Http\JsonResponse;
             @OA\Property(property="errors", type="object"),
  *     },
  * )
+ *
+ * @OA\Tag(
+ *     name="products",
+ *     description="You can manage your products here",
+ *     @OA\ExternalDocumentation(
+ *          description="Find out more",
+ *          url="http://127.0.0.1:8000/api/documentation/product"
+ *     )
+ *
+ * )
  */
 class ApiController extends Controller
 {

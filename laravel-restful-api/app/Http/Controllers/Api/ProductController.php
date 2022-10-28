@@ -78,6 +78,32 @@ class ProductController extends ApiController
      *
      * @param Request $request
      * @return JsonResponse
+     * @OA\POST(
+     *     path="/api/products",
+     *     tags={"products"},
+     *     summary="Create a new product",
+     *     operationId="store",
+     *     @OA\RequestBody (
+     *          description="Store product",
+     *          required=true,
+     *          @OA\JsonContent(ref="#/components/schemas/Product")
+     *     ),
+     *     @OA\Response(
+     *         response=201,
+     *         description="Product created response ",
+     *         @OA\JsonContent(ref="#/components/schemas/ApiResponse")
+     *     ),
+     *     @OA\Response(
+     *         response=401,
+     *         description="Unauthenticated",
+     *         @OA\JsonContent()
+     *     ),
+     *     @OA\Response(
+     *         response="default",
+     *         description="Unexpected Error",
+     *         @OA\JsonContent()
+     *     )
+     * )
      */
     public function store(Request $request)
     {
@@ -140,6 +166,39 @@ class ProductController extends ApiController
      * @param Request $request
      * @param Product $product
      * @return JsonResponse
+     * @OA\PUT(
+     *     path="/api/products/{id}",
+     *     tags={"products"},
+     *     summary="Update the product",
+     *     operationId="update",
+     *      @OA\Parameter (
+     *          name="id",
+     *          in="path",
+     *          description="The id column of the product to update",
+     *          required=true,
+     *          @OA\Schema(type="integer", format="int32")
+     *     ),
+     *     @OA\RequestBody (
+     *          description="Update product",
+     *          required=true,
+     *          @OA\JsonContent(ref="#/components/schemas/Product")
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="Product updated response ",
+     *         @OA\JsonContent(ref="#/components/schemas/ApiResponse")
+     *     ),
+     *     @OA\Response(
+     *         response=401,
+     *         description="Unauthenticated",
+     *         @OA\JsonContent()
+     *     ),
+     *     @OA\Response(
+     *         response="default",
+     *         description="Unexpected Error",
+     *         @OA\JsonContent()
+     *     )
+     * )
      */
     public function update(Request $request, Product $product)
     {
@@ -157,12 +216,40 @@ class ProductController extends ApiController
      * @param Product $product
      * @return JsonResponse
      * @throws \Exception
+     * @OA\DELETE(
+     *     path="/api/products/{id}",
+     *     tags={"products"},
+     *     summary="Delete the product",
+     *     operationId="destroy",
+     *      @OA\Parameter (
+     *          name="id",
+     *          in="path",
+     *          description="The id column of the product to delete",
+     *          required=true,
+     *          @OA\Schema(type="integer", format="int32")
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="Product deleted response ",
+     *         @OA\JsonContent(ref="#/components/schemas/ApiResponse")
+     *     ),
+     *     @OA\Response(
+     *         response=401,
+     *         description="Unauthenticated",
+     *         @OA\JsonContent()
+     *     ),
+     *     @OA\Response(
+     *         response="default",
+     *         description="Unexpected Error",
+     *         @OA\JsonContent()
+     *     )
+     * )
      */
     public function destroy(Product $product)
     {
         $product->delete();
 
-        return $this->apiResponse($product, 'Product deleted successfully', JsonResponse::HTTP_OK);
+        return $this->apiResponse(null, 'Product deleted successfully', JsonResponse::HTTP_OK);
 
     }
 

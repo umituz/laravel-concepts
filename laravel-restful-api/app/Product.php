@@ -13,6 +13,7 @@ use Illuminate\Database\Eloquent\Model;
  *     properties={
          @OA\Property(property="id", type="integer", format="int64", description="id column"),
          @OA\Property(property="name", type="string", description="name column"),
+         @OA\Property(property="price", type="number", description="price column"),
  *     },
  *     required={"id", "name"}
  * )
