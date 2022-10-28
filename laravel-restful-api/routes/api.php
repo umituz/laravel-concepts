@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
@@ -9,10 +10,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::middleware('auth.basic')->get('/user-basic', function (Request $request) {
     return $request->user();
 });
-
-//Route::get('/merhaba',function(){
-//    return "hello";
-//});
 
 Route::get('/categories/custom1', 'Api\CategoryController@custom1')->name('categories.custom1')->middleware('auth:api');
 Route::get('/categories/custom2', 'Api\CategoryController@custom2')->name('categories.custom2');

@@ -50,7 +50,6 @@ class AuthController extends Controller
             return response()->json([
                 'message' => 'Invalid Password'
             ]);
-
         }
 
         return response()->json([

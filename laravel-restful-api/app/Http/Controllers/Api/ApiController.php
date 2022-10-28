@@ -9,6 +9,15 @@ use Illuminate\Http\JsonResponse;
 /**
  * Class ApiController
  * @package App\Http\Controllers\Api
+ *
+ * @OA\Info(
+ *      version="1.0.0",
+ *      title="Laravel API Documentation",
+ *      description="Laravel API Description",
+ *      termsOfService="http://127.0.0.1:8000/terms-of-service",
+ *      @OA\Contact(email="umituz998@gmail.com"),
+ *      @OA\License(name="Apache 2.0", url="https://www.apache.org/licenses/LICENSE-2.0.html")
+ * )
  */
 class ApiController extends Controller
 {
