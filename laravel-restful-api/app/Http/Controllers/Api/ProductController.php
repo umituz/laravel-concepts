@@ -23,11 +23,26 @@ class ProductController extends ApiController
      *          name="limit",
      *          in="query",
      *          description="How many items to return to one time",
-     *          required=false
+     *          required=false,
+     *          @OA\Schema(type="integer", format="int32")
      *     ),
      *     @OA\Response(
      *         response=200,
      *         description="A paged array of products",
+     *         @OA\JsonContent(
+     *              type="array",
+     *              @OA\Items(ref="#/components/schemas/Product")
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=401,
+     *         description="Unauthenticated",
+     *         @OA\JsonContent()
+     *     ),
+     *     @OA\Response(
+     *         response="default",
+     *         description="Unexpected Error",
+     *         @OA\JsonContent()
      *     )
      * )
      */

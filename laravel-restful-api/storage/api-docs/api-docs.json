@@ -27,12 +27,42 @@
                         "name": "limit",
                         "in": "query",
                         "description": "How many items to return to one time",
-                        "required": false
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "A paged array of products"
+                        "description": "A paged array of products",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Product"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
                     }
                 }
             }
@@ -42,7 +72,23 @@
         "schemas": {
             "Product": {
                 "title": "Product",
-                "description": "Product description"
+                "description": "Product description",
+                "required": [
+                    "id",
+                    "name"
+                ],
+                "properties": {
+                    "id": {
+                        "description": "id column",
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "name": {
+                        "description": "name column",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
             }
         }
     }
