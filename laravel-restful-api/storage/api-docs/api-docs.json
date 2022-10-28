@@ -22,6 +22,14 @@
                 "summary": "List all products",
                 "description": "Display a listing of the resource.",
                 "operationId": "d97d1c3727cbac49708b85f7d11f7d58",
+                "parameters": [
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "How many items to return to one time",
+                        "required": false
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "A paged array of products"

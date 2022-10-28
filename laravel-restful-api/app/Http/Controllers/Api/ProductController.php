@@ -16,13 +16,19 @@ class ProductController extends ApiController
      * @param Request $request
      * @return JsonResponse
      * @OA\Get(
-     *      path="/api/products",
-     *      tags={"products"},
-     *      summary="List all products",
-     *      @OA\Response(
-     *          response=200,
-     *          description="A paged array of products",
-     *      )
+     *     path="/api/products",
+     *     tags={"products"},
+     *     summary="List all products",
+     *     @OA\Parameter (
+     *          name="limit",
+     *          in="query",
+     *          description="How many items to return to one time",
+     *          required=false
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="A paged array of products",
+     *     )
      * )
      */
     public function index(Request $request)
