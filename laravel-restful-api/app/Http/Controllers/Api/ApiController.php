@@ -41,6 +41,20 @@ use Illuminate\Http\JsonResponse;
  *     )
  *
  * )
+ *
+ * @OA\SecurityScheme(
+ *     type="apiKey",
+ *     name="api_token",
+ *     securityScheme="api_token",
+ *     in="query"
+ * )
+ *
+ * @OA\SecurityScheme(
+ *     type="http",
+ *     securityScheme="bearer_token",
+ *     scheme="bearer",
+ *     bearerFormat="JWT"
+ * )
  */
 class ApiController extends Controller
 {

@@ -64,7 +64,12 @@
                             }
                         }
                     }
-                }
+                },
+                "security": [
+                    {
+                        "api_token": []
+                    }
+                ]
             },
             "post": {
                 "tags": [
@@ -111,7 +116,12 @@
                             }
                         }
                     }
-                }
+                },
+                "security": [
+                    {
+                        "api_token": []
+                    }
+                ]
             }
         },
         "/api/products/{id}": {
@@ -161,7 +171,12 @@
                             }
                         }
                     }
-                }
+                },
+                "security": [
+                    {
+                        "api_token": []
+                    }
+                ]
             },
             "put": {
                 "tags": [
@@ -220,7 +235,12 @@
                             }
                         }
                     }
-                }
+                },
+                "security": [
+                    {
+                        "api_token": []
+                    }
+                ]
             },
             "delete": {
                 "tags": [
@@ -268,7 +288,12 @@
                             }
                         }
                     }
-                }
+                },
+                "security": [
+                    {
+                        "api_token": []
+                    }
+                ]
             }
         }
     },
@@ -317,6 +342,18 @@
                     }
                 },
                 "type": "object"
+            }
+        },
+        "securitySchemes": {
+            "api_token": {
+                "type": "apiKey",
+                "name": "api_token",
+                "in": "query"
+            },
+            "bearer_token": {
+                "type": "http",
+                "bearerFormat": "JWT",
+                "scheme": "bearer"
             }
         }
     },

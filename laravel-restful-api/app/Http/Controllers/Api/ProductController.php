@@ -44,7 +44,10 @@ class ProductController extends ApiController
      *         response="default",
      *         description="Unexpected Error",
      *         @OA\JsonContent()
-     *     )
+     *     ),
+     *     security={
+                {"api_token": {}}
+    *      }
      * )
      */
     public function index(Request $request)
@@ -102,7 +105,10 @@ class ProductController extends ApiController
      *         response="default",
      *         description="Unexpected Error",
      *         @OA\JsonContent()
-     *     )
+     *     ),
+     *     security={
+     *          {"api_token": {}}
+     *     }
      * )
      */
     public function store(Request $request)
@@ -145,7 +151,10 @@ class ProductController extends ApiController
      *         response="default",
      *         description="Unexpected Error",
      *         @OA\JsonContent()
-     *     )
+     *     ),
+     *     security={
+                {"api_token": {}}
+     *     }
      * )
      */
     public function show($id)
@@ -197,7 +206,10 @@ class ProductController extends ApiController
      *         response="default",
      *         description="Unexpected Error",
      *         @OA\JsonContent()
-     *     )
+     *     ),
+     *     security={
+                {"api_token": {}}
+     *     }
      * )
      */
     public function update(Request $request, Product $product)
@@ -242,7 +254,10 @@ class ProductController extends ApiController
      *         response="default",
      *         description="Unexpected Error",
      *         @OA\JsonContent()
-     *     )
+     *     ),
+     *     security={
+                {"api_token": {}}
+     *     }
      * )
      */
     public function destroy(Product $product)

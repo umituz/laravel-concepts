@@ -24,7 +24,7 @@ Route::get('/users/custom3', 'Api\UserController@custom3')->name('users.custom3'
 Route::get('/users/custom4', 'Api\UserController@custom4')->name('users.custom4');
 
 Route::apiResource('/users', 'Api\UserController');
-Route::apiResource('/products', 'Api\ProductController');
+Route::apiResource('/products', 'Api\ProductController')->middleware('auth:api');
 Route::apiResource('/categories', 'Api\CategoryController');
 
 
