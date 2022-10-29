@@ -7,3 +7,5 @@ mix.js('resources/js/app.js', 'public/js')
         processCssUrls: false,
         postCss: [tailwindcss('./tailwind.config.js')],
     })
+
+mix.disableSuccessNotifications();

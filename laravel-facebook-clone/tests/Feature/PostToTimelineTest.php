@@ -23,24 +23,10 @@ class PostToTimelineTest extends TestCase
     {
         $user = $this->user();
 
-        $this->withoutExceptionHandling();
-
         $this->actingAs($user, 'api');
 
         $response = $this->post('/api/posts', [
-            'data' => [
-                'type' => 'posts',
-                'attributes' => [
-                    'posted_by' => [
-                        'data' => [
-                            'attributes' => [
-                                'name' => $user->name
-                            ]
-                        ]
-                    ],
-                    'body' => 'Testing Body'
-                ]
-            ]
+            'body' => 'Testing Body'
         ]);
 
         $post = Post::first();

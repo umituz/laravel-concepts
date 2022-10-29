@@ -18,7 +18,7 @@ class PostController extends Controller
      *
      * @return PostCollection
      */
-    public function index()
+    public function index(): PostCollection
     {
         $friends = Friend::friendships();
 
@@ -33,15 +33,13 @@ class PostController extends Controller
     /**
      * Stores data
      *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\Routing\ResponseFactory|\Illuminate\Http\Response
+     * @return PostResource
      */
-    public function store()
+    public function store(): PostResource
     {
         $data = request()->validate([
-            'data.attributes.body' => ''
+            'body' => ''
         ]);
-
-        $data = $data['data']['attributes'];
 
         $post = request()->user()->posts()->create($data);
 

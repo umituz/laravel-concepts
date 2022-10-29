@@ -4,10 +4,17 @@
             <div>
                 <ProfilePhoto/>
             </div>
-            <div class="flex-1 mx-4">
-                <input type="text" name="body"
+            <div class="flex-1 flex mx-4">
+                <input v-model="postMessage" type="text" name="body"
                        placeholder="Add a post"
                        class="w-full pl-4 h-8 bg-gray-200 rounded-full focus:outline-none focus:shadow-outline text-sm">
+                <transition name="fade">
+                    <button
+                        v-if="postMessage"
+                        @click="$store.dispatch('postMessage')"
+                        class="bg-gray-200 ml-2 px-3 py-1 rounded-full">Post
+                    </button>
+                </transition>
             </div>
             <div>
                 <button class="flex justify-center items-center rounded-full w-10 h-8 bg-gray-200">
@@ -22,16 +29,33 @@
 </template>
 
 <script>
-    import ProfilePhoto from "./ProfilePhoto";
+import ProfilePhoto from "./ProfilePhoto";
+import _ from 'lodash';
 
-    export default {
-        name: "NewPost",
-        components: {
-            ProfilePhoto
+export default {
+    name: "NewPost",
+    components: {
+        ProfilePhoto
+    },
+    computed: {
+        postMessage: {
+            get() {
+                return this.$store.getters.postMessage;
+            },
+            set: _.debounce(function (postMessage) {
+                this.$store.commit('updateMessage', postMessage);
+            }, 300)
         }
     }
+}
 </script>
 
 <style scoped>
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+}
 
+.fade-enter, .fade-leave-to {
+    opacity: 0;
+}
 </style>
